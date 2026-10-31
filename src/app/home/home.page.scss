@@ -1,0 +1,414 @@
+
+ion-toolbar {
+  --background: #14532d;
+  --color: #ffffff;
+}
+
+ion-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* MAIN BACKGROUND */
+ion-content {
+  --background: #f3f7f3;
+}
+
+/* HEADER */
+ion-toolbar {
+  --background: #101810;
+  --color: #ffffff;
+  --min-height: 60px;
+}
+
+ion-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* WELCOME SECTION */
+.welcome {
+  background: linear-gradient(135deg, #101810, #14532d);
+  padding: 25px 22px;
+  border-radius: 18px;
+  margin: 12px 0 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(20, 83, 45, 0.2);
+}
+
+.welcome::after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border: 20px solid rgba(74, 222, 128, 0.1);
+  border-radius: 50%;
+  right: -35px;
+  top: -35px;
+}
+
+.welcome-label {
+  color: #86efac;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0 0 12px;
+}
+
+.welcome h1 {
+  font-size: 29px;
+  font-weight: 800;
+  margin: 0 0 7px;
+  color: white;
+}
+
+.welcome-subtitle {
+  color: #d1fae5;
+  font-size: 13px;
+  margin: 0;
+}
+
+.welcome-bottom {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-top: 22px;
+  color: #bbf7d0;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* STUDENT COUNT */
+.student-count {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e1ebe2;
+  border-left: 4px solid #16a34a;
+  margin-bottom: 24px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.student-count h2 {
+  color: #15803d;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.student-count p {
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 800;
+  margin: 3px 0 0;
+  letter-spacing: 0.5px;
+}
+
+.count-icon {
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 17px;
+  font-weight: 800;
+  padding: 13px;
+  border-radius: 12px;
+}
+
+/* FILTER SECTION */
+.filter-section h3,
+.list-heading h3 {
+  color: #17251a;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.filters ion-button {
+  --border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  height: 36px;
+  margin: 0;
+}
+
+/* GREEN IONIC BUTTON THEME */
+ion-button {
+  --background: #15803d;
+  --background-hover: #166534;
+  --background-activated: #14532d;
+  --color: #ffffff;
+  --border-color: #15803d;
+  --ripple-color: #86efac;
+}
+
+ion-button::part(native) {
+  font-weight: 700;
+}
+
+/* OUTLINE FILTER BUTTONS */
+.filters ion-button[fill="outline"] {
+  --background: transparent;
+  --color: #15803d;
+  --border-color: #15803d;
+}
+
+/* LIST HEADING */
+.list-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 3px 10px;
+}
+
+.list-heading h3 {
+  margin: 0;
+}
+
+.list-heading span {
+  color: #15803d;
+  background: #dcfce7;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* STUDENT CARDS */
+.student-card {
+  background: white;
+  margin: 12px 0;
+  border-radius: 14px;
+  border: 1px solid #e1ebe2;
+  border-left: 4px solid #16a34a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.045);
+  overflow: hidden;
+}
+
+ion-card-header {
+  padding: 15px 17px 5px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.student-number {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.gender-label {
+  background: #f0fdf4;
+  color: #15803d;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+ion-card-title {
+  color: #17251a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+ion-card-content {
+  padding: 5px 17px 15px;
+}
+
+.course {
+  color: #788579;
+  font-size: 12px;
+  margin: 5px 0 15px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid #edf2ed;
+  padding-top: 12px;
+}
+
+.card-bottom span {
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.card-bottom ion-button {
+  --background: #15803d;
+  --background-hover: #166534;
+  --border-radius: 8px;
+  --color: white;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* NO STUDENTS */
+.no-student {
+  background: white;
+  padding: 30px 15px;
+  border-radius: 14px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.no-student h3 {
+  color: #17251a;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.no-student p {
+  color: #788579;
+  font-size: 13px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  color: #93a397;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 30px 0 15px;
+}
+
+/* PAGE SPACING */
+ion-content.ion-padding {
+  --padding-start: 17px;
+  --padding-end: 17px;
+  --padding-top: 12px;
+  --padding-bottom: 25px;
+}
+
+/* STUDENT PROFILE POPUP */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 24, 16, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.student-modal {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e1ebe2;
+  border-top: 4px solid #16a34a;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-height: 90%;
+  overflow-y: auto;
+  animation: popup 0.25s ease;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #101810, #14532d);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-header p {
+  color: #86efac;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+}
+
+.modal-header h2 {
+  color: white;
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.modal-header span {
+  color: #d1fae5;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.section-title {
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.detail-box {
+  background: #f0fdf4;
+  border: 1px solid #e1ebe2;
+  border-radius: 10px;
+  padding: 13px 15px;
+  margin-bottom: 10px;
+}
+
+.detail-box small {
+  display: block;
+  color: #788579;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.detail-box strong {
+  color: #17251a;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.student-modal .close-button {
+  --background: #15803d;
+  --background-hover: #166534;
+  --border-radius: 8px;
+  --color: white;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 18px 0 0;
+}
+
+/* POPUP ANIMATION */
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

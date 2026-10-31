@@ -1,0 +1,179 @@
+
+<!-- IONIC COMPONENTS: Header, toolbar, and title -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Student Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- IONIC COMPONENT: Main page content -->
+<ion-content class="ion-padding">
+
+  <!-- WELCOME SECTION -->
+  <div class="welcome">
+    <h1>BSIT Students</h1>
+    <p>3rd Year Student Data</p>
+  </div>
+
+  <!-- FILTER BUTTONS -->
+  <div class="filters">
+
+    <!-- PROPERTY BINDING: [fill] changes the button style depending on the selected gender -->
+    <!-- EVENT BINDING: (click) calls filterStudents() when clicked -->
+    <!-- INTERPOLATION: Not used in this button; the gender values are passed as arguments -->
+    <ion-button
+      [fill]="selectedGender === 'All' ? 'solid' : 'outline'"
+      (click)="filterStudents('All')">
+      All
+    </ion-button>
+
+    <ion-button
+      [fill]="selectedGender === 'Male' ? 'solid' : 'outline'"
+      (click)="filterStudents('Male')">
+      Male
+    </ion-button>
+
+    <ion-button
+      [fill]="selectedGender === 'Female' ? 'solid' : 'outline'"
+      (click)="filterStudents('Female')">
+      Female
+    </ion-button>
+
+  </div>
+
+  <!-- STUDENT COUNT -->
+  <div class="student-count">
+
+    <!-- INTERPOLATION: Displays the number of filtered students -->
+    <p>
+      Showing {{ filteredStudents.length }} student(s)
+    </p>
+
+  </div>
+
+  <!-- STUDENT CARDS -->
+
+  <!-- @IF-ELSE: Checks if there are students to display -->
+  @if (filteredStudents.length > 0) {
+
+    <!-- @FOR: Loops through the filtered student list and creates a card for each student -->
+    @for (student of filteredStudents; track student.id) {
+
+      <!-- IONIC COMPONENTS: Student card and its contents -->
+      <ion-card class="student-card">
+
+        <ion-card-header>
+
+          <!-- INTERPOLATION: Displays the student's ID -->
+          <div class="student-number">
+            STUDENT #{{ student.id }}
+          </div>
+
+          <!-- INTERPOLATION: Displays the student's name -->
+          <ion-card-title>
+            {{ student.name }}
+          </ion-card-title>
+
+        </ion-card-header>
+
+        <ion-card-content>
+
+          <!-- IONIC COMPONENT: Button used to view student information -->
+          <!-- EVENT BINDING: Calls viewStudent() when clicked -->
+          <ion-button
+            expand="block"
+            class="view-button"
+            (click)="viewStudent(student)">
+            View Information
+          </ion-button>
+
+        </ion-card-content>
+
+      </ion-card>
+
+    }
+
+  } @else {
+
+    <!-- @ELSE: Displays this message when no students match the selected filter -->
+    <div class="no-students">
+      <h3>No Students Found</h3>
+      <p>There are no students under this category.</p>
+    </div>
+
+  }
+
+  <!-- STUDENT PROFILE POPUP -->
+
+  <!-- @IF: Displays the popup only when a student is selected -->
+  @if (selectedStudent) {
+
+    <div class="modal-overlay" (click)="closeStudent()">
+
+      <div
+        class="student-modal"
+        (click)="$event.stopPropagation()">
+
+        <!-- MODAL HEADER -->
+        <div class="modal-header">
+
+          <p>STUDENT PROFILE</p>
+
+          <!-- INTERPOLATION: Displays the selected student's name -->
+          <h2>{{ selectedStudent.name }}</h2>
+
+          <!-- INTERPOLATION: Displays the selected student's ID -->
+          <span>
+            STUDENT ID: #{{ selectedStudent.id }}
+          </span>
+
+        </div>
+
+        <!-- STUDENT DETAILS -->
+        <div class="modal-body">
+
+          <p class="section-title">
+            PERSONAL DETAILS
+          </p>
+
+          <div class="detail-box">
+            <small>GENDER</small>
+
+            <!-- INTERPOLATION: Displays the selected student's gender -->
+            <strong>{{ selectedStudent.gender }}</strong>
+          </div>
+
+          <div class="detail-box">
+            <small>COURSE</small>
+
+            <!-- INTERPOLATION: Displays the selected student's course -->
+            <strong>{{ selectedStudent.course }}</strong>
+          </div>
+
+          <div class="detail-box">
+            <small>YEAR LEVEL</small>
+
+            <!-- INTERPOLATION: Displays the year and its correct suffix -->
+            <strong>
+              {{ selectedStudent.year }}{{ selectedStudent.year === 1 ? 'st' : selectedStudent.year === 2 ? 'nd' : selectedStudent.year === 3 ? 'rd' : 'th' }} Year
+            </strong>
+          </div>
+
+        </div>
+
+        <!-- IONIC COMPONENT: Close button -->
+        <!-- EVENT BINDING: Calls closeStudent() when clicked -->
+        <ion-button
+          expand="block"
+          class="close-button"
+          (click)="closeStudent()">
+          CLOSE
+        </ion-button>
+
+      </div>
+
+    </div>
+
+  }
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "Student Data",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
