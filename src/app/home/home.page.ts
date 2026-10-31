@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 
 // IONIC COMPONENTS: Imported Ionic components used in the HTML
